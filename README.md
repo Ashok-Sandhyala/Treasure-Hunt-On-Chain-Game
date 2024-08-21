@@ -24,6 +24,20 @@ Treasure Hunt is an interactive on-chain game built using Solidity. Players comp
 3. **Treasure Movement**: The treasure moves each time a player moves. Depending on the player's new position, the treasure may move randomly.
 4. **Winning Condition**: A player wins by moving to the grid position where the treasure is currently located.
 5. **Reward**: The winner receives 90% of the contract’s ETH balance, while 10% is reserved for future rounds.
+   
+**Core Functions**
+**constructor:**
+Initializes the grid.
+Sets the treasure's initial position using the block hash and block number.
+
+**move(uint8 newPosition):**
+Validates the move (checks if it’s adjacent).
+Updates the player’s position.
+Determines if the player won (i.e., if the player’s new position is the treasure's position).
+Moves the treasure according to the rules (prime number, multiple of 5).
+
+**determineWinner():**
+Transfers 90% of the contract’s balance to the winner and locks 10% for the next round.
 
 ## Installation
 
